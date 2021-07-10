@@ -1,0 +1,29 @@
+{
+    "Test1": {
+        "producers": [
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1"
+        ],
+        "consumers": [
+            "python3 consumerSync.py -n p1 -t 100 -m confirmMannually -q queue1",
+            "python3 consumerSync.py -n p1 -t 100 -m confirmMannually -q queue1"
+        ]
+    },
+    "Test2": {
+        "producers": [
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1"
+        ],
+        "consumers": [
+            "python3 consumerAsync.py -n p1 -t 100 -m confirmMannually -q queue1",
+            "python3 consumerAsync.py -n p1 -t 100 -m confirmMannually -q queue1",
+            "python3 consumerAsync.py -n p1 -t 100 -m noconfirm -q queue1",
+            "python3 consumerAsync.py -n p1 -t 100 -m noconfirm -q queue1"
+        ]
+    }
+}
