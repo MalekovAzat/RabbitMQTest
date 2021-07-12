@@ -19,16 +19,28 @@ def main():
     parser.add_argument('-t', '--time', help = "Time while the action is performing.", type=int, required=True)
     parser.add_argument('-m', '--mode', help = "Set 'confirmMannually' or 'confirmMannually' for set autoconfirming", type=str, required=True)
     parser.add_argument('-q', '--queue', help = "The name of the queue which will be created and connected to chanel", type=str, required=True)
-    
+    parser.add_argument('-si', '--serverIp', help='The host of the RabbitMQ server', required=True)
+    parser.add_argument('-u', '--user', help='The name for log in RabbitMQ server', required=True)
+    parser.add_argument('-p', '--password', help='The password for log in RabbitMQ server', required=True)
+
     args = parser.parse_args()
 
     name = args.name
     workingTime = args.time
     confirmManually = args.mode == 'confirmMannually'
     queueName = args.queue
+    hostToConnect = args.serverIp
+    userName = args.user
+    userPassword = args.password
 
+    credentials = pika.PlainCredentials(userName, userPassword)
     connection = pika.BlockingConnection(
-        pika.ConnectionParameters(host='localhost')
+        pika.ConnectionParameters(
+            hostToConnect, 
+            5672,
+            '/',
+            credentials
+        )
     )
 
     channel = connection.channel()
