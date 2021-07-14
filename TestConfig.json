@@ -1,17 +1,17 @@
 {
     "Test1": {
         "producers": [
-            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si 192.168.1.202 -u user1 -p 0000"
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si localhost -u user1 -p 0000",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si localhost -u user1 -p 0000",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si localhost -u user1 -p 0000",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si localhost -u user1 -p 0000",
+            "python3 producerSync.py -n p1 -t 100 -m nosave -q queue1 -si localhost -u user1 -p 0000"
         ],
         "consumers": [
-            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si 192.168.1.202 -u user1 -p 0000",
-            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si 192.168.1.202 -u user1 -p 0000"
+            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si localhost -u user1 -p 0000",
+            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si localhost -u user1 -p 0000",
+            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si localhost -u user1 -p 0000",
+            "python3 consumerSync.py -n c1 -t 100 -m confirmMannually -q queue1 -si localhost -u user1 -p 0000"
         ]
     },
     "Test2": {
